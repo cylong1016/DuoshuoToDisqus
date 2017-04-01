@@ -20,10 +20,10 @@ public class Post {
 	/** 站点ID。 */
 	private String site_id;
 	/** 评论发表时间。 */
-	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */ timezone = "GMT+8")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */timezone = "GMT+8")
 	private Date created_at;
 	/** 评论更新时间。 */
-	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */ timezone = "GMT+8")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */timezone = "GMT+8")
 	private Date updated_at;
 	/** 评论被点【赞】的次数。 */
 	private int likes;

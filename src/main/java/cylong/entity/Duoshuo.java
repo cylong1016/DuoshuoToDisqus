@@ -12,7 +12,9 @@ public class Duoshuo {
 
 	private String generator;
 	private String version;
+	/** 文章 */
 	List<Thread> threads;
+	/** 评论 */
 	List<Post> posts;
 
 	public String getGenerator() {

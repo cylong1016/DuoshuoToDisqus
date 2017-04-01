@@ -16,10 +16,10 @@ public class Thread {
 	/** 多说文章ID。 */
 	private String thread_id;
 	/** 创建时间。 */
-	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */ timezone = "GMT+8")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */timezone = "GMT+8")
 	private Date created_at;
 	/** 更新时间。 */
-	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */ timezone = "GMT+8")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, /* pattern = "yyyy-MM-dd HH:mm:ss", */timezone = "GMT+8")
 	private Date updated_at;
 	/** 文章被点【赞】的次数。 */
 	private int likes;
