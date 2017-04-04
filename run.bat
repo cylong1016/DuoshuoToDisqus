@@ -1,1 +1,1 @@
-start java -Xmx256m -Xms128m -jar DuoshuoToDisqus.jar
+java -Xmx256m -Xms128m -jar DuoshuoToDisqus.jar
