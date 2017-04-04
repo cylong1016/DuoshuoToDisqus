@@ -58,8 +58,8 @@ public class Launch {
 		}
 		Duoshuo duoshuo = getDuoshuoObj(sourceDefaultPath);
 		createDisqusXML(duoshuo, disqusPath);
-		System.out.println("Success! Path = " + disqusPath);
-		System.out.println("by cylong1016(https://github.com/cylong1016/DuoshuoToDisqus)");
+		System.out.println("Output path = " + dir.getAbsolutePath());
+		System.out.println("By cylong1016(https://github.com/cylong1016/DuoshuoToDisqus)");
 	}
 
 	/**
