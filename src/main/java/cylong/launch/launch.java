@@ -37,21 +37,20 @@ import cylong.entity.Thread;
  * @author cylong
  * @version 2017年3月31日 上午9:28:37
  */
-public class launch {
+public class Launch {
 
-	/** 多说源文件 */
-	private static final String sourcePath = "data/duoshuo.json";
+	/** 多说源文件【默认路径】 */
+	private static String sourceDefaultPath = "data/duoshuo.json";
 	/** 格式化后的多说源文件，方便查看 */
 	private static final String formatSourcePath = "data/duoshuo-format.json";
 	/** 转化的 Disqus 评论文件 */
 	private static final String disqusPath = "data/disqus.xml";
 
 	public static void main(String[] args) {
-		launch.run();
-	}
-
-	private static void run() {
-		Duoshuo duoshuo = getDuoshuoObj(sourcePath);
+		if (args.length != 0) {
+			sourceDefaultPath = args[0];
+		}
+		Duoshuo duoshuo = getDuoshuoObj(sourceDefaultPath);
 		createDisqusXML(duoshuo, disqusPath);
 		System.out.println("Success! Path = " + disqusPath);
 	}
@@ -97,7 +96,7 @@ public class launch {
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		Document document = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		
+
 		try {
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 			document = builder.newDocument();
