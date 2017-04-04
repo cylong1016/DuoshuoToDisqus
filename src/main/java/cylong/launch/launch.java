@@ -39,26 +39,33 @@ import cylong.entity.Thread;
  */
 public class Launch {
 
+	/** 数据文件夹 */
+	private static String dataDir = "data";
 	/** 多说源文件【默认路径】 */
-	private static String sourceDefaultPath = "data/duoshuo.json";
+	private static String sourceDefaultPath = dataDir + "/duoshuo.json";
 	/** 格式化后的多说源文件，方便查看 */
-	private static final String formatSourcePath = "data/duoshuo-format.json";
+	private static final String formatSourcePath = dataDir + "/duoshuo-format.json";
 	/** 转化的 Disqus 评论文件 */
-	private static final String disqusPath = "data/disqus.xml";
+	private static final String disqusPath = dataDir + "/disqus.xml";
 
 	public static void main(String[] args) {
+		File dir = new File(dataDir);
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
 		if (args.length != 0) {
 			sourceDefaultPath = args[0];
 		}
 		Duoshuo duoshuo = getDuoshuoObj(sourceDefaultPath);
 		createDisqusXML(duoshuo, disqusPath);
 		System.out.println("Success! Path = " + disqusPath);
+		System.out.println("by cylong1016(https://github.com/cylong1016/DuoshuoToDisqus)");
 	}
 
 	/**
 	 * 从 JSON 文件中获得 Duoshuo 对象
 	 * @param path 文件路径
-	 * @return
+	 * @return Duoshuo 对象
 	 * @author cylong
 	 * @version 2017年4月2日 上午1:24:38
 	 */
